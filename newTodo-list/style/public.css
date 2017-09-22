@@ -1,0 +1,315 @@
+* {
+    margin: 0;
+    font-family: STLiti;
+    /*font-family: cursive;*/
+    /*color: #bfbfbf;*/
+    color: #757575;
+}
+
+
+/*外面容易div*/
+
+#app {
+    background-color: #F0F0CD;
+    width: 6.4rem;
+    /*min-height: 900px;*/
+    min-height: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+
+/*编辑容器*/
+
+#edit,
+#edited,
+#edit textarea {
+    background-color: #fff;
+    color: #42dfbc;
+    border: 1px solid #B5B5B5;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    border-radius: 20px;
+    position: absolute;
+}
+
+#appEditBg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(129, 129, 129, 0.5);
+    top: 0;
+}
+
+#edit {
+    width: 5.94rem;
+    height: 5.59rem;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    z-index: 99;
+}
+
+#edited {
+    width: 1.63rem;
+    height: 0.48rem;
+    font-size: 0.3rem;
+    bottom: 0;
+    right: 0;
+}
+
+#edit textarea {
+    width: 5.86rem;
+    height: 5.02rem;
+    resize: none;
+    border: none;
+    outline: none;
+    font-size: 0.3rem;
+    top: 0.08rem;
+}
+
+#app .canEdit {
+    display: block;
+}
+
+
+/*上容器*/
+
+#top {
+    width: 6.4rem;
+    /*position: fixed;*/
+    background-color: #F0F0CD;
+}
+
+
+/*头部*/
+
+#app>header {
+    font-size: 0.6rem;
+    text-align: center;
+    /*font-family: Monotype Corsiva;*/
+    color: #42dfbc;
+    height: 0.88rem;
+    line-height: 0.88rem;
+}
+
+
+/*搜索*/
+
+#search {
+    height: 0.4rem;
+    border-bottom: 1px solid #42dfbc;
+    font-size: 0.3rem;
+    padding-bottom: 1px;
+}
+
+#search>input {
+    height: 0.38rem;
+    width: 5.45rem;
+    background-color: #F0F0CD;
+    border: none;
+    color: #42dfbc;
+    outline: none;
+    font-size: 0.3rem;
+    margin-left: 0.28rem;
+    float: left;
+}
+
+::-webkit-input-placeholder {
+    /* WebKit browsers */
+    color: #42dfbc;
+}
+
+:-moz-placeholder {
+    /* Mozilla Firefox 4 to 18 */
+    color: #42dfbc;
+}
+
+::-moz-placeholder {
+    /* Mozilla Firefox 19+ */
+    color: #42dfbc;
+}
+
+:-ms-input-placeholder {
+    /* Internet Explorer 10+ */
+    color: #42dfbc;
+}
+
+#search>#add {
+    display: block;
+    color: #42dfbc;
+    font-size: 0.6rem;
+    background-color: #F0F0CD;
+    border: none;
+    outline: none;
+    height: 0.38rem;
+    line-height: 0.38rem;
+    float: left;
+    cursor: pointer;
+    width: 0.5rem;
+}
+
+
+/*功能栏*/
+
+#fun {
+    height: 0.56rem;
+    border-top: 1px solid #bfbfbf;
+    border-bottom: 1px solid #bfbfbf;
+    margin: 0.2rem 0;
+    width: 100%;
+}
+
+#fun button {
+    display: block;
+    float: left;
+    height: 0.56rem;
+    border: none;
+    outline: none;
+    font-size: 0.3rem;
+    cursor: pointer;
+    /*color: #bfbfbf;*/
+    color: #757575;
+    background-color: #F0F0CD;
+    margin: 0 0.16rem;
+}
+
+#fun #allsel {
+    width: 1.3rem;
+    text-align: left;
+}
+
+#sort img {
+    width: 0.12rem
+}
+
+#fun #clearf {
+    float: right;
+}
+
+
+/*列表内容*/
+
+#todolist .todos-i,
+#todolist .item {
+    /*动画*/
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    -ms-transition: all 1s;
+    -o-transition: all 1s;
+    transition: all 1s;
+}
+
+#todolist .item {
+    height: 0.88rem;
+}
+
+#todolist .todos-i {
+    display: block;
+    height: 2.6rem;
+    line-height: 2.6rem;
+    font-size: 0.3rem;
+    text-align: center;
+}
+
+.item>div {
+    float: left;
+}
+
+.checkbox {
+    width: 0.81rem;
+    height: 0.88rem;
+    position: relative;
+}
+
+.item img {
+    width: 0.27rem;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    margin-left: 0.35rem;
+    cursor: pointer;
+}
+
+.content {
+    width: 4.12rem;
+    height: 0.5rem;
+    padding-top: 0.2rem;
+}
+
+.title {
+    font-size: 0.3rem;
+    color: #42dfbc;
+    width: 4.12rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.time {
+    color: #bfbfbf;
+    font-size: 0.18rem;
+}
+
+.done {
+    text-decoration: line-through;
+}
+
+.setting {
+    width: 1rem;
+    height: 0.88rem;
+    position: relative;
+}
+
+.setting img:first-of-type {
+    margin-right: 0.2rem;
+}
+
+.setting img:last-of-type {
+    margin-left: 0.9rem;
+}
+
+
+/*动画class*/
+
+#todolist .todos-complete-enter,
+#todolist .todos-complete-leave-active {
+    opacity: 0;
+    -webkit-transform: translateX(-30px);
+    -moz-transform: translateX(-30px);
+    -ms-transform: translateX(-30px);
+    -o-transform: translateX(-30px);
+    transform: translateX(-30px);
+}
+
+#todolist .todos-complete-leave-active {
+    position: absolute;
+}
+
+
+/*编辑框和背景出现动画*/
+
+.edit-enter-active,
+.edit-leave-active,
+.editbg-enter-active,
+.editbg-leave-active {
+    -webkit-transition: opacity .5s;
+    -moz-transition: opacity .5s;
+    -ms-transition: opacity .5s;
+    -o-transition: opacity .5s;
+    transition: opacity .5s;
+}
+
+.edit-enter,
+.edit-leave-active,
+.editbg-enter,
+.editbg-leave-active {
+    opacity: 0;
+}

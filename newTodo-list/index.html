@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="style/public.css">
+    <link rel="icon" type="image/png" href="img/favicon/favicon1.png" sizes="32x32">
+    <title>Todo-list</title>
+</head>
+
+<body>
+    <div id="app">
+        <header>TodoList</header>
+        <div id="top">
+            <div id="search">
+                <input type="text" placeholder="Something..." @keyup.enter="addTodo()" v-model.trim='todotitle' id="todotext" />
+                <button type="button" v-on:click="addTodo()" id="add">+</button>
+            </div>
+            <div id="fun">
+                <button type="button" id="allsel" @click="allANo()">{{allselected}}</button>
+                <button type="button" id="sort" @click="sorts()">排序<img :src="sortimg"></button>
+                <button type="button" id="clearf" @click="clearDone()">清除已完成</button>
+            </div>
+        </div>
+        <transition-group name="todos-complete" tag="section" id="todolist">
+            <todo-list class="todos-complete-item" v-for="(item,index) in computedtodos" :key="item.time" :is-done="item.done" :title="item.text" :time="item.time" @checkbox="checkboxs(index)" @remove="removeTodo(index)" @edit="editTodo(index)"></todo-list>
+            <!--本地存储没有数据则显示-->
+            <i v-if="!todos.length" class="todos-i" :key="todos.length">赶快计划起来吧！！！<i/>
+        </transition-group>
+        <transition name="edit">
+            <div id="edit" v-if="isEdit">
+                <!--:eindex="eindex"用来标注哪个任务需要修改-->
+                <textarea v-model.trim='editext' v-on:focus="selectAll" @keyup.enter="edited()"></textarea>
+                <button id="edited" @click="edited()">确认修改</button>
+            </div>
+        </transition>
+        <transition name="editbg">
+            <div id="appEditBg" @click="isEdit = false" v-if="isEdit"></div>
+        </transition>
+    </div>
+    <!--模板-->
+    <!--<template></template>标签IE出bug-->
+    <script type="text/x-template" id="my-list-template">
+        <div class="item">
+            <div class="checkbox">
+                <img alt="复选框" :src="checkimg" @click="checkbox()">
+            </div>
+            <div class="content">
+                <p class="title" :class="{done:isDone}">{{title}}</p>
+                <p class="time" :class="{done:isDone}">{{localtime}}</p>
+            </div>
+            <div class="setting">
+                <img src="img/edit.png" @click="edit()" alt="编辑">
+                <img src="img/delete.png" @click="remove()" alt="删除">
+            </div>
+        </div>
+    </script>
+    <script src="js/vue.js"></script>
+    <script src="js/public.js"></script>
+</body>
+
+</html>
